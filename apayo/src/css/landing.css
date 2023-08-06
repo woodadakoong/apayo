@@ -1,0 +1,93 @@
+/* 기본설정 */
+.main{
+  background-color: #ebebeb;
+    display:flex;
+    height:738px;
+    margin-left:350px;
+    margin-right:350px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     
+}
+
+/* 아파요 박스 */
+#logo{
+    width:600px;
+    height: 100px;
+    background-color: #ebebeb;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top:15px;
+    
+   
+    
+}
+
+/* 아파요 이미지 */
+#logo_img{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 병원 박스 */
+#hospital_box{
+    width:600px;
+    height: 300px;
+    background-color: white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:110px;
+    border:2px solid #78a2b9;
+    border-radius: 8px;
+
+    
+    
+}
+
+/* 병원사진 */
+#hospital_img{
+  margin-top: 10px;
+}
+
+/* 약국,전화 박스 */
+#extra_box{
+  display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 약국박스 */
+#pharmacy_box{
+  width:294px;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin-top: 10px;
+  margin-right: 6px;
+  border:2px solid #78a2b9;
+  border-radius: 8px;
+
+}
+
+/* 전화박스 */
+#call_box{
+  width:294px;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin-top: 10px;
+  margin-left: 6px;
+  border:2px solid #78a2b9;
+  border-radius: 8px;
+
+}
+

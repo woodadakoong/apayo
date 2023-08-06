@@ -1,6 +1,6 @@
 import {Route,Routes,useNavigate,Link,Router} from 'react-router-dom';
 import {useState} from "react";
-import Landing from "./landing";
+import Landing from "./page/landing";
 import WholeBody from './page/wholebody';
 
 import Head from "./page/part/head";

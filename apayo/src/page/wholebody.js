@@ -1,5 +1,4 @@
 import React from "react";
-import body from "../img/image 28.png";
 import {useNavigate} from 'react-router-dom';
 
 function WholeBody(){

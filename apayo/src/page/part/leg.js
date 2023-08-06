@@ -1,5 +1,8 @@
 import React from "react";
 import {useNavigate} from 'react-router-dom';
+import logo from "../../img/logo.png";
+import order from "../../img/order/order_2.png";
+import "../../css/part/leg.css";
 
 function Leg(){
     const navigate = useNavigate();
@@ -59,13 +62,31 @@ function Leg(){
 
 
     return(
-        <div>
-        <button onClick={Thigh}>허벅지</button>
-        <button onClick={Hip}>엉덩이</button>
-        <button onClick={Knee}>무릎</button>
-        <button onClick={Calf}>종아리</button>
-        <button onClick={Ankle}>발목</button>
-        <button onClick={Foot}>발</button>
+        <div className="main">
+          <div id="part_navbar">
+          <div id="head_logo">
+          <img src={logo} id="head_logo_img" />
+          </div>
+          
+          <div id="head_order">
+          <img src={order} id="head_order_img"/>
+          </div>
+          </div>
+
+        <div id="line1">
+          <button onClick={Thigh} id="thigh_btn" className="btn">허벅지</button>
+          <button onClick={Hip} id="hip_btn" className="btn">엉덩이</button>
+          <button onClick={Knee} id="knee_btn" className="btn">무릎</button>
+        </div>
+
+        <div id="line2">
+          <button onClick={Calf} id="calf_btn" className="btn">종아리</button>
+          <button onClick={Ankle} id="ankle_btn" className="btn">발목</button>
+          <button onClick={Foot} id="foot_btn" className="btn">발</button>
+        </div>
+
+       
+       
 
         </div>
     )

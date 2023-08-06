@@ -1,0 +1,27 @@
+#kind_order_img{
+    padding-bottom: 10px;
+}
+
+.kind_btn{
+    width:294px;
+    height:200px;
+    border:2px solid #78a2b9;
+    border-radius: 8px;
+}
+
+#kind_line_2{
+    margin-top:30px;
+}
+
+#hurt1_btn,#hurt3_btn{
+    margin-right:6px;
+}
+
+#hurt2_btn,#hurt4_btn{
+    margin-left:6px;
+}
+
+.kind_btn:hover{
+    background-color: #78a2b9;
+
+}

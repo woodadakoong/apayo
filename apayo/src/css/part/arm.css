@@ -1,0 +1,16 @@
+#shoulder_btn,#arm_top_btn,#arm_bottom_btn,#wrist_btn{
+    margin-right: 6px;
+}
+
+#arm_top_btn,#elbow_btn,#wrist_btn,#hand_btn{
+    margin-left:6px;
+}
+
+.btn:hover{
+    background-color: #78a2b9;
+}
+
+.btn p{
+    margin:0px;
+    padding:0px;
+}

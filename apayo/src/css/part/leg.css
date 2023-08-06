@@ -1,0 +1,7 @@
+#thigh_btn,#hip_btn,#calf_btn,#ankle_btn{
+    margin-right: 6px;
+}
+
+#hip_btn,#knee_btn,#ankle_btn,#foot_btn{
+    margin-left:6px;
+}
