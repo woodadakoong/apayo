@@ -1,5 +1,13 @@
 import React from "react";
 import {useNavigate} from 'react-router-dom';
+import logo from "../img/logo.png";
+import order from "../img/order/order_1.png";
+import "../css/wholebody.css";
+import head_img from "../img/body/head.png";
+import left_img from "../img/body/left_hand.png";
+import right_img from "../img/body/right_hand.png";
+import center_img from "../img/body/center.png";
+import leg_img from "../img/body/leg.png";
 
 function WholeBody(){
     const navigate=useNavigate();
@@ -34,14 +42,50 @@ function WholeBody(){
           navigate('/leg', { state: part});
         };
     return(
-       <div>
-        {/* 마지막에 이미지로 구현할 것 */}
-        <h1>큰 몸통 사진 넣는 페이지</h1>
-            <button onClick={head}>머리</button>
-           <button onClick={arm}>팔</button>
-           <button onClick={body}>몸통</button>
-           <button onClick={leg}>다리</button>
+       <div className="body_main">
+        <div id="part_navbar">
+
+          <div id="head_logo">
+            <img src={logo} id="head_logo_img" />
+          </div>
+
+           <div id="head_order">
+         <img src={order} id="head_order_img"/>
+        </div>
+
+    </div>
+            <div id="part1">
+              <button onClick={head} className="wholebody_btn" id="tmp">
+                <img src={head_img}/>
+              </button>
+            </div>
+            
+            <div id="part2">
+              <button onClick={arm} className="wholebody_btn">
+                <img src={left_img}/>
+              </button>
+              <button onClick={body} className="wholebody_btn">
+                <img src={center_img}/>
+              </button>
+              <button onClick={arm} className="wholebody_btn">
+                <img src={right_img}/>
+              </button>
+            </div>
+           
+           <div id="part3">
+              <button onClick={leg} className="wholebody_btn">
+                <img src={leg_img}/>
+              </button>
+              <button onClick={leg} className="wholebody_btn">
+                <img src={leg_img}/>
+              </button>
+           </div>
+           
+          
+
        </div>
+     
+
     )
 }
 

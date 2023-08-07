@@ -1,0 +1,26 @@
+.body_main{
+    background-color: #ebebeb;
+    display:flex;
+    height:844px;
+    margin-left:550px;
+    margin-right:550px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     
+}
+
+.wholebody_btn{
+    border: none;
+    background-color: #ebebeb;
+}
+#part1{
+    position: absolute;
+    top:140px;
+
+}
+
+#part2{
+    position: absolute;
+    top:210px;
+}

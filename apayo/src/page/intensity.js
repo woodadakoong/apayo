@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {useLocation} from "react-router-dom";
 import {useNavigate} from 'react-router-dom';
 import logo from "../img/logo.png";
-import order from "../img/order/order_2.png";
+import order from "../img/order/order_4.png";
 import "../css/intensity.css";
 function Intensity(){
     //kind로부터 받아온 데이터 가져오기
