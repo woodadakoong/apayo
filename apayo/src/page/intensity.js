@@ -61,7 +61,7 @@ function Intensity(){
 
    }
     return(
-        <div className="head_main">
+        <div className="main">
            <div id="part_navbar">
 
            <div id="head_logo">

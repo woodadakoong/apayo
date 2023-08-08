@@ -1,15 +1,16 @@
 .head_main{
     background-color:#ebebeb;
     display:flex;
-    height:844px;
     margin-left:550px;
     margin-right:550px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding:20px;
+    height:844px;
 }
 
-#part_navbar{
+ #part_navbar{
    
     display: flex;
     justify-content: space-between;
@@ -45,3 +46,4 @@
 #mouth_btn,#nose_btn,#head_detail_btn,#neck_btn{
     margin-left:6px;
 }
+ 

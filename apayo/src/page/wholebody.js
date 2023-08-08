@@ -42,7 +42,7 @@ function WholeBody(){
           navigate('/leg', { state: part});
         };
     return(
-       <div className="body_main">
+       <div className="main">
         <div id="part_navbar">
 
           <div id="head_logo">
@@ -55,19 +55,19 @@ function WholeBody(){
 
     </div>
             <div id="part1">
-              <button onClick={head} className="wholebody_btn" id="tmp">
+              <button onClick={head} className="wholebody_btn" >
                 <img src={head_img}/>
               </button>
             </div>
             
             <div id="part2">
-              <button onClick={arm} className="wholebody_btn">
+              <button onClick={arm} className="wholebody_btn" id="left_arm">
                 <img src={left_img}/>
               </button>
               <button onClick={body} className="wholebody_btn">
                 <img src={center_img}/>
               </button>
-              <button onClick={arm} className="wholebody_btn">
+              <button onClick={arm} className="wholebody_btn" id="right_arm">
                 <img src={right_img}/>
               </button>
             </div>
