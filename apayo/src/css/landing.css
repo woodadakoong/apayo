@@ -8,10 +8,10 @@
   min-height: 100vh; /* 최소한의 화면 높이 유지 */
 
 
-  @media (max-width: 1377px) {
+  @media (max-width: 1500px) {
     /* 뷰포트 너비가 1377px 이하일 때 적용될 스타일 */
-    margin-left: calc((100vw - 1377px) / 2 + 550px); /* 왼쪽 여백 계산 */
-    margin-right: calc((100vw - 1377px) / 2 + 550px); /* 오른쪽 여백 계산 */
+    margin-left: calc((100vw - 1500px) / 2 + 550px); /* 왼쪽 여백 계산 */
+    margin-right: calc((100vw - 1500px) / 2 + 550px); /* 오른쪽 여백 계산 */
   }
 
   @media (max-width: 780px) {
@@ -101,4 +101,23 @@
   border:2px solid #78a2b9;
   border-radius: 8px;
 
+}
+
+#hospital_box:hover{
+  background-color: #78a2b9;
+}
+#call_box:hover{
+  background-color: #78a2b9;
+
+}
+
+#pharmacy_box:hover{
+  background-color: #78a2b9;
+
+}
+
+#wrapper{
+   display: flex;
+  flex-direction: column;
+  align-items: center;
 }

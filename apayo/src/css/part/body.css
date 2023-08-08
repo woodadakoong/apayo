@@ -1,0 +1,22 @@
+#line3{
+    position:absolute;
+    top:414px;
+}
+
+#line4{
+    position:absolute;
+    top:550px;
+}
+
+/* #back_btn{
+    margin-right: 215px;
+} */
+
+#chest_btn,#s_top_btn,#liver_btn,#heart_btn,#etc1_btn,#etc2_btn{
+    margin-right: 6px;
+}
+
+#s_top_btn,#s_b_btn,#heart_btn,#lung_btn,#etc2_btn,#etc3_btn{
+    margin-left:6px;
+}
+ 
