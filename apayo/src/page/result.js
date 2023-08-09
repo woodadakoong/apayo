@@ -15,7 +15,10 @@ const Result=() => {
   }, [intensityData]);
 
   const sendDataToServer = async (data) => {
-    const prompt =`부위는 ${data.detail_part}이고 고통정도는 ${data.pain}이야. 병원 추천해줘.`;
+    const prompt =`부위는 ${data.detail_part}이고 고통정도는 ${data.pain}이야. 병원 추천해줘.어느 병원에 가야 해? 
+    대답할 수 있는 병원은 다음과 같아.
+    { 치과, 외과, 내과, 정형외과, 산부인과, 비뇨기과, 이비인후과, 안과, 피부과}
+    대답의 형식은, '병원 종류' 만 정확히 단답형으로 말해줘`;
     const url = `http://localhost:8080/bot/chat?prompt=${encodeURIComponent(prompt)}`;
     try {
       const response = await axios.get(url);
