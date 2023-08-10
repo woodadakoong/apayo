@@ -1,103 +1,82 @@
+#root{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
 .main {
   background-color: #ebebeb;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px; /* 추가된 내용 */
-  min-height: 100vh; /* 최소한의 화면 높이 유지 */
+  /* 임의대로 수정 */
+  padding: 1vh;     
 
-
-  @media (max-width: 1500px) {
-    /* 뷰포트 너비가 1377px 이하일 때 적용될 스타일 */
-    margin-left: calc((100vw - 1500px) / 2 + 550px); /* 왼쪽 여백 계산 */
-    margin-right: calc((100vw - 1500px) / 2 + 550px); /* 오른쪽 여백 계산 */
-  }
-
-  @media (max-width: 780px) {
-    /* 뷰포트 너비가 935px 이하일 때 적용될 스타일 */
-    margin-left: 0px; /* 왼쪽 여백 20px로 유지 */
-    margin-right: 0px; /* 오른쪽 여백 20px로 유지 */
-  }
+  height: 100vh;
+  width:55vh;
+  position: relative;
 
   
-  /* 뷰포트 너비가 1377px보다 크거나 같을 때는 여백을 550px로 유지 */
-  margin-left: 550px;
-  margin-right: 550px;
 }
 
 #logo{
-  width: 300px; /* 원하는 규격 너비 */
-  height: 100px; /* 원하는 규격 높이 */
+  width: 55%; /* 원하는 규격 너비 */
+  height: 14%; /* 원하는 규격 높이 */
   display:flex;
   align-items: center;
   justify-content: center;
   position: absolute;
   top:40px;
 
-  @media (max-width: 1377px) {
-    /* 뷰포트 너비가 1377px 이하일 때 적용될 스타일 */
-    width: 300px; /* 너비 유지 */
-    height: 100px; /* 높이 유지 */
-  }
-
-  @media (max-width: 780px) {
-    /* 뷰포트 너비가 780px 이하일 때 적용될 스타일 */
-    width: 100%; /* 화면 너비에 맞춰진 크기 */
-    max-width: 300px; /* 최대 크기를 300px로 제한 */
-    height: 100px; /* 높이 자동 조절 */
-  }
-
   
 }
 
-#hospital_box{
-  width:350px;
-  height: 204px;
+#hospital_box {
+  display: block;
+  width: 85%; /* 원하는 비율로 설정 */
+  height:27%;
+  text-decoration: none;
   background-color: white;
   display:flex;
   align-items: center;
   justify-content: center;
   border:2px solid #78a2b9;
   border-radius: 8px;
-  
-  @media (max-width: 780px) {
-    /* 뷰포트 너비가 780px 이하일 때 적용될 스타일 */
-    position: absoulte;
-    top: 20px; /* 작은 화면에서 더 위로 올리기 */
-  }
 }
+
 
 #extra_box{
   display:flex;
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
+  width: 85%; /* 원하는 비율로 설정 */
+  height:27%;
+
 }
 
 #pharmacy_box{
-  width:167px;
-  height: 192px;
+  width:70%;
+  height: 85%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
-  margin-top: 10px;
-  margin-right: 6px;
   border:2px solid #78a2b9;
   border-radius: 8px;
+  margin-right: 3%;
 
 }
 
 /* 전화박스 */
 #call_box{
-  width:167px;
-  height: 192px;
+  width:70%;
+  height: 85%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
-  margin-top: 10px;
-  margin-left: 6px;
+  margin-left: 3%;
+ 
   border:2px solid #78a2b9;
   border-radius: 8px;
 

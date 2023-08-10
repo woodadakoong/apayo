@@ -114,8 +114,10 @@ function Body(){
         </div>
        <div id="line2">
        <button onClick={Back} className="btn" id="back_btn">등</button>
+      
+
        </div>
-       <hr style={{ margin: '10px 0', border: '1', borderTop: '1px solid #3498db' }} />
+     
         <div id="line3">
         <button onClick={Liver} className="btn" id="liver_btn">간</button>
         <button onClick={Heart} className="btn" id="heart_btn">심장</button>

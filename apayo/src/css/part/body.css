@@ -1,16 +1,45 @@
+#line1{
+    width:80%;
+    height:14%;
+    position:absolute;
+    top:132px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+#line2{
+    position:absolute;
+    top:268px;
+    width:80%;
+    height:14%;
+   
+    display: flex;
+    justify-content: space-between;
+}
 #line3{
     position:absolute;
     top:414px;
+    width:80%;
+    height:14%;
+    display: flex;
+    justify-content: space-between;
+
 }
 
 #line4{
     position:absolute;
     top:550px;
+    width:80%;
+    height:14%;
+    display: flex;
+    justify-content: space-between;
+
 }
 
-/* #back_btn{
-    margin-right: 215px;
-} */
+#back_btn{
+    margin-right: 69%;
+} 
 
 #chest_btn,#s_top_btn,#liver_btn,#heart_btn,#etc1_btn,#etc2_btn{
     margin-right: 6px;
@@ -20,3 +49,4 @@
     margin-left:6px;
 }
  
+

@@ -14,38 +14,34 @@ function Landing(){
                 <img src={logo} id="logo_img"/>
             </div>
 
-            <Link to="/wholebody">
-            <button id="hospital_box">
+            <Link to="/wholebody" id="hospital_box">
                <div className="wrapper">
                     <img src={hospital} id="hospital_img"/>
-                    <div>병원 Hospital</div>
+                    <div>병원 Hospital</div> 
                </div>
                 
-               
-           
-            </button>
             </Link>
 
         <div id="extra_box">
 
-        <Link to="/pharmacy.js">
-            <button id="pharmacy_box">
-                <div classNmae="wrapper">
+        <Link to="/pharmacy.js" id="pharmacy_box">
+            
+                <div className="wrapper">
                 <img src={pharmacy} className="img"/>
                 <div> 약국 pharmacy</div>
                 </div>
                 
                 
-            </button>
+        
         </Link>
 
-        <Link to="/call.js">
-            <div>
-            <button id="call_box">
+        <Link to="/call.js" id="call_box">
+            <div className="wrapper">
+           
                
-                    <img src={call} className="img"/>
-                
-            </button>
+                <img src={call} className="img"/>
+                <div>전화 call</div>
+         
             
            </div>
            </Link>
