@@ -2,23 +2,25 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import {useEffect,useState} from "react";
 import axios from 'axios';
+import Map from "./map"; //Map 컴포넌트 불러오기
 
 const Result=() => {
   const location = useLocation();
   const intensityData = location.state; // Intensity 페이지에서 받은 데이터
 
   const [serverResponse, setServerResponse] = useState(null);
-  console.log(intensityData);
   useEffect(() => {
     // 서버로 데이터 전송
     sendDataToServer(intensityData);
   }, [intensityData]);
 
   const sendDataToServer = async (data) => {
-    const prompt =`부위는 ${data.detail_part}이고 고통정도는 ${data.pain}이야. 병원 추천해줘.어느 병원에 가야 해? 
+    const prompt =`
+    부위는 ${data.detail_part}이고 증상은 ${data.kind} ${data.pain}이야. 어느 병원에 가야 해? 
     대답할 수 있는 병원은 다음과 같아.
-    병원 종류: { 치과, 외과, 내과, 정형외과, 산부인과, 비뇨기과, 이비인후과, 안과, 피부과}
-    대답의 형식은, '병원 종류' 만 정확히 단답형으로 말해줘`;
+    { 치과, 외과, 내과, 정형외과, 산부인과, 비뇨기과, 이비인후과, 안과, 피부과}
+    대답의 형식은, '병원 종류' 만 정확히 단답형으로 말해줘.`;
+;
     const url = `http://localhost:8080/bot/chat?prompt=${encodeURIComponent(prompt)}`;
     try {
       const response = await axios.get(url);
@@ -29,12 +31,14 @@ const Result=() => {
   };
 
   return (
-    <div className="main">
+    <div>
   
     <p>Result 페이지</p>
     {serverResponse ? (
       <div>
-        <p>서버에서 받은 데이터: {JSON.stringify(serverResponse)}</p>
+        <p>{JSON.stringify(serverResponse)}추천!!</p>
+        {/* Map 컴포넌트에 serverResponse 데이터 전달 */}
+        <Map keyword= {JSON.stringify(serverResponse)}/>
       </div>
     ) : (
       <p>데이터 로딩 중...</p>

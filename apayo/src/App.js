@@ -13,6 +13,8 @@ import Intensity from "./page/intensity";
 import Kind from "./page/kind";
 
 import Result from "./page/result";
+
+import Map from "./page/map";
 function App() {
 
   return (
@@ -39,6 +41,10 @@ function App() {
 
     {/* 결과 */}
     <Route path="/result" element={<Result/>} />
+
+    {/* 지도 렌더링 */}
+    <Route path="/map" element={<Map/>} />
+
 
    </Routes>
    
