@@ -15,6 +15,7 @@ const Result=() => {
   }, [intensityData]);
 
   const sendDataToServer = async (data) => {
+    console.log(data);
     const prompt =`
     부위는 ${data.detail_part}이고 증상은 ${data.kind} ${data.pain}이야. 어느 병원에 가야 해? 
     대답할 수 있는 병원은 다음과 같아.
