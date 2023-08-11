@@ -5,6 +5,11 @@
 #kind_line_1{
     position: absolute;
     top:132px;
+    width:80%;
+    height:30%;
+    display:flex;
+    justify-content: space-between;
+
 }
 .kind_btn{
     width:167px;
@@ -14,8 +19,13 @@
 }
 
 #kind_line_2{
+    width:80%;
+    height:60%;
     position: absolute;
     top:332px;
+    display:flex;
+    justify-content: space-between;
+
 }
 
 #hurt1_btn,#hurt3_btn{

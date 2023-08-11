@@ -5,6 +5,11 @@
     
 }
 
+#part1{
+  position: absolute;
+  top:140px;
+}
+
 #left_arm,#right_arm{
   margin:0px;
   padding:0;
