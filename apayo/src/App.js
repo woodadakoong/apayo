@@ -15,6 +15,8 @@ import Kind from "./page/kind";
 import Result from "./page/result";
 
 import Map from "./page/map";
+
+import Pharmacy from './page/pharmacy';
 function App() {
 
   return (
@@ -44,6 +46,9 @@ function App() {
 
     {/* 지도 렌더링 */}
     <Route path="/map" element={<Map/>} />
+
+    <Route path="/pharmacy" element={<Pharmacy/>} />
+
 
 
    </Routes>

@@ -7,6 +7,14 @@ import "../../css/part/head.css";
 import logo from "../../img/logo.png";
 import order from "../../img/order/order_2.png";
 
+import ear from "../../img/part/head/ear.png"
+import eye from "../../img/part/head/eye.png"
+import head from "../../img/part/head/head.png"
+import mouth from "../../img/part/head/mouth.png"
+import neck from "../../img/part/head/neck.png"
+import nose from "../../img/part/head/nose.png"
+
+
 function Head(){
     const navigate = useNavigate();
 
@@ -78,15 +86,39 @@ function Head(){
 
         </div>
         <div id="line1">
-          <button onClick={Eye} id="eye_btn" className="btn">눈</button>
-          <button onClick={Nose}  id="nose_btn" className="btn">코</button>
-          <button onClick={Mouth} id="mouth_btn" className="btn">입</button>
+          <button onClick={Eye} id="eye_btn" className="btn">
+            <img src={eye}/>
+            <p>눈</p>
+            <p>Eye</p>
+            </button>
+          <button onClick={Nose}  id="nose_btn" className="btn">
+          <img src={nose}/>
+            <p>코</p>
+            <p>Nose</p>
+          </button>
+          <button onClick={Mouth} id="mouth_btn" className="btn">
+          <img src={mouth}/>
+            <p>입</p>
+            <p>Mouth</p>
+          </button>
         </div>
         
         <div id="line2">
-          <button onClick={Ear} id="ear_btn" className="btn">귀</button>
-          <button onClick={Head_detail} id="head_detail_btn" className="btn">머리</button>
-          <button onClick={Neck} id="neck_btn" className="btn">목</button>
+          <button onClick={Ear} id="ear_btn" className="btn">
+          <img src={ear}/>
+            <p>귀</p>
+            <p>Ear</p>
+          </button>
+          <button onClick={Head_detail} id="head_detail_btn" className="btn">
+          <img src={head}/>
+            <p>머리</p>
+            <p>Head</p>
+          </button>
+          <button onClick={Neck} id="neck_btn" className="btn">
+          <img src={neck}/>
+            <p>목</p>
+            <p>Neck</p>
+          </button>
         </div>
         
 

@@ -3,6 +3,19 @@ import {useNavigate} from 'react-router-dom';
 import logo from "../../img/logo.png";
 import order from "../../img/order/order_2.png";
 import "../../css/part/body.css";
+
+import back from "../../img/part/body/back.png"
+import bang from "../../img/part/body/bang.png"
+import chest from "../../img/part/body/chest.png"
+import heart from "../../img/part/body/heart.png"
+import jang from "../../img/part/body/jang.png"
+import liver from "../../img/part/body/liver.png"
+import low_bae from "../../img/part/body/low_bae.png"
+import pae from "../../img/part/body/pae.png"
+import stomach from "../../img/part/body/stomach.png"
+import up_bae from "../../img/part/body/up_bae.png"
+
+
 function Body(){
     const navigate = useNavigate();
 
@@ -108,25 +121,66 @@ function Body(){
           </div>
         </div>
         <div id="line1">
-        <button onClick={Chest} className="btn" id="chest_btn">가슴</button>
-        <button onClick={Stomach_top} className="btn" id="s_top_btn">윗배</button>
-        <button onClick={Stomach_bottom} className="btn" id="s_b_btn">아랫배</button>
+        <button onClick={Chest} className="btn" id="chest_btn">
+          <img src={chest}/>
+          <p>가슴</p>
+          <p>Chest</p>
+        </button>
+
+        <button onClick={Stomach_top} className="btn" id="s_top_btn">
+        <img src={up_bae}/>
+          <p>윗배</p>
+          <p>up Abdomen</p>
+        </button>
+        <button onClick={Stomach_bottom} className="btn" id="s_b_btn">
+        <img src={low_bae}/>
+          <p>아랫배</p>
+          <p>low Abdomen</p>
+        </button>
         </div>
        <div id="line2">
-       <button onClick={Back} className="btn" id="back_btn">등</button>
+       <button onClick={Back} className="btn" id="back_btn">
+       <img src={back}/>
+          <p>등/허리</p>
+          <p>back/waist</p>
+       </button>
       
 
        </div>
      
         <div id="line3">
-        <button onClick={Liver} className="btn" id="liver_btn">간</button>
-        <button onClick={Heart} className="btn" id="heart_btn">심장</button>
-        <button onClick={Lung} className="btn" id="lung_btn">폐</button>
+        <button onClick={Liver} className="btn" id="liver_btn">
+        <img src={liver}/>
+          <p>간</p>
+          <p>liver</p>
+        </button>
+        <button onClick={Heart} className="btn" id="heart_btn">
+        <img src={heart}/>
+          <p>심장</p>
+          <p>heart</p>
+        </button>
+        <button onClick={Lung} className="btn" id="lung_btn">
+        <img src={pae}/>
+          <p>폐</p>
+          <p>lung</p>
+        </button>
         </div>
         <div id="line4">
-        <button onClick={Etc1} className="btn" id="etc1_btn">위</button>
-        <button onClick={Etc2} className="btn" id="etc2_btn">장</button>
-        <button onClick={Etc3} className="btn" id="etc3_btn">방광</button>
+        <button onClick={Etc1} className="btn" id="etc1_btn">
+        <img src={stomach}/>
+          <p>위</p>
+          <p>stomach</p>
+        </button>
+        <button onClick={Etc2} className="btn" id="etc2_btn">
+        <img src={jang}/>
+          <p>장</p>
+          <p>Intestines</p>
+        </button>
+        <button onClick={Etc3} className="btn" id="etc3_btn">
+        <img src={bang}/>
+          <p>방광/생식기</p>
+          <p>bladder/genitals</p>
+        </button>
         </div>
         
 

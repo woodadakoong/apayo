@@ -1,0 +1,44 @@
+#result_box{
+    background-color: white;
+    height: 33%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top:15%;
+   
+}
+#part_say{
+    display: flex;
+    flex-direction: column;
+   
+}
+
+
+#click_box{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    height:100%;
+    justify-content: space-between;
+}
+
+.part_box{
+
+    border:2px solid #ebebeb;
+    width:30%;
+    height:50%;
+    margin-left:5px;
+    margin-right:5px;
+    position: relative;
+    top:30%;
+    border-radius: 8px;
+}
+
+.text{
+    text-align: center;
+    margin-top: 25%;
+} 
+

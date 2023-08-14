@@ -24,7 +24,7 @@ function Landing(){
 
         <div id="extra_box">
 
-        <Link to="/pharmacy.js" id="pharmacy_box">
+        <Link to="/pharmacy" id="pharmacy_box">
             
                 <div className="wrapper">
                 <img src={pharmacy} className="img"/>

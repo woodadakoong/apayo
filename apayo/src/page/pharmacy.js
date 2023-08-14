@@ -5,12 +5,11 @@ import {useEffect,useState} from "react";
 import axios from 'axios';
 //import "../css/map.css";
 const kakao=window;
-const Map=({keyword}) => {
+const Pharmacy=() => {
   const [currentAddress, setCurrentAddress] = useState('');
   const [keywordData, setData] = useState([]); // data 변수를 상태로 관리
-  const [overlay, setOverlay] = useState(null); // Overlay 상태 추가
   useEffect(() => {
-  
+    console.log("helloworld");
     const ps = new window.kakao.maps.services.Places();
     const infowindow = new window.kakao.maps.InfoWindow({ zIndex: 1 });
 
@@ -42,16 +41,15 @@ const Map=({keyword}) => {
         });
         
         const content = '<div style="display: flex; justify-content: center; align-items: center; padding: 5px; font-size: 12px; text-align: center;">현위치</div>';
-        
-        //정보창에 content 보여주기
+      
         infowindow.setContent(content);
         infowindow.open(map, marker);
 
         //지도 중심좌표를 접속위치로 변경
         map.setCenter(currentPosition);
-        const combinedKeyword = currentAddress+" "+ keyword;
+        const combinedKeyword = currentAddress+" "+ "약국";
         searchPlaces(combinedKeyword, map); // 설정한 키워드로 검색
-        console.log("키워드:",keyword);
+        
 
         //주소정보얻기
         const geocoder = new window.kakao.maps.services.Geocoder();
@@ -78,7 +76,6 @@ const Map=({keyword}) => {
                 displayMarker(data[i], map);    
                 bounds.extend(new window.kakao.maps.LatLng(data[i].y, data[i].x));
       
-                
             }       
 
             // 아래 주석을 풀면 내 현위치가 아니라 키워드 검색을 통해 주어진 주소로 지도 중심이 바뀜. ex) 내가 서울에 있는데 부산의 병원이 키워드면 지도가 부산으로 옮겨짐
@@ -95,32 +92,28 @@ const Map=({keyword}) => {
     
 
     function displayMarker(place, map) {
-      const content = `
-    <div class="custom" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-      <div style="font-size:12px;">${place.place_name}</div>
-      <button onclick="window.location.href='https://place.map.kakao.com/${place.id}';">병원 가기</button>
-    </div>`;
+
       var marker = new window.kakao.maps.Marker({
           map: map,
           position: new window. kakao.maps.LatLng(place.y, place.x) 
       });
-      
-      //마커 클릭하면
+  
       window.kakao.maps.event.addListener(marker, 'click', function() {
-        
-        infowindow.setContent(content);
-    infowindow.open(map, marker);
-         
+          infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
+          infowindow.open(map, marker);
       });
   }
-  }, [currentAddress,keyword]);
+  }, [currentAddress]);
 
 
 console.log(keywordData);
 
   return (
+<div className="main">
+ 
+<div id="map" style={{ width: "100px", height: '300px'}}></div>
+</div>
 
- <div id="map" style={{ width: "100%", height: '50%', top:"15%"}}></div>
     
  
 
@@ -130,4 +123,4 @@ console.log(keywordData);
   )
 };
 
-export default Map;
+export default Pharmacy;
