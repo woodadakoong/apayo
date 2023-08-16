@@ -21,49 +21,49 @@ function Head(){
 
     const Eye = () => {
       // 데이터를 객체로 만들기
-      const detail_part = { detail_part: "눈" };
+      const detail_part = { detail_part: "눈",detail_eng:"eye" };
   
       // intensity 페이지로 이동하면서 데이터를 전달
-      navigate('/kind', { state: detail_part });
+      navigate('/eye_kind', { state: detail_part });
     };
 
     //내상
     const Nose = () => {
         
-      const detail_part = { detail_part: "코" };
+      const detail_part = { detail_part: "코",detail_eng:"nose" };
   
-      navigate('/kind', { state: detail_part });
+      navigate('/nose_kind', { state: detail_part });
       };
 
     
     const Mouth = () => {
-      const detail_part = { detail_part: "입" };
+      const detail_part = { detail_part: "입",detail_eng:"mouth" };
   
      
-      navigate('/kind', { state: detail_part });
+      navigate('/mouse_kind', { state: detail_part });
       };
 
       
       const Ear = () => {
        
-        const detail_part = { detail_part: "귀" };
+        const detail_part = { detail_part: "귀",detail_eng:"ear" };
   
      
-      navigate('/kind', { state: detail_part });
+      navigate('/ear_kind', { state: detail_part });
       };
 
       const Head_detail= () => {
         
-        const detail_part = { detail_part: "머리" };
+        const detail_part = { detail_part: "머리",detail_eng:"head" };
   
      
-        navigate('/kind', { state: detail_part });
+        navigate('/head_kind', { state: detail_part });
       };
 
 
       const Neck = () => {
         
-        const detail_part = { detail_part: "목" };
+        const detail_part = { detail_part: "목",detail_eng:"neck" };
   
      
         navigate('/kind', { state: detail_part });

@@ -1,0 +1,62 @@
+
+  .img_Apayo_logo{
+    translate:-110px 40px;
+    z-index: 30;
+  }
+  
+  .Appp {
+    font-family: sans-serif;
+    text-align: center;
+    height: 90vh;
+    z-index: 20;
+  }
+  
+  .fullH {
+    height: 300px;
+  }
+  
+  #map-container {
+    position: relative;
+  }
+  
+  .image-container {
+    position: absolute;
+    bottom: 0; /* Position at the bottom */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+    flex-direction: row;
+    align-items: center;
+    z-index: 1;
+    padding: 1rem; /* Add some padding for spacing */
+  }
+  
+  /* Rest of your existing styles... */
+  
+  
+  /* 버튼 width,height 기본 설정 */
+  .pharmacy_btn{
+    width:106px;
+    height: 120px;
+    border:2px solid #78a2b9;
+    border-radius: 8px;
+    display: 'flex';
+    flex-direction: 'column';
+    align-items: 'center';
+    margin-left: 25px;
+    margin-top: 20px;
+  }
+  
+  
+  .blue {
+    background-color:rgba(133, 189, 255, 1) !important; /* Make sure to use !important to override other styles */
+  }
+  
+  
+  .pharmacy_btn p {
+    margin-top: -10px; /* Adjust this value to move the text up or down */
+  }
+  
+  
+  

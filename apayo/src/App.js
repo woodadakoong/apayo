@@ -17,6 +17,24 @@ import Result from "./page/result";
 import Map from "./page/map";
 
 import Pharmacy from './page/pharmacy';
+import Call from "./page/call";
+
+import Extra from "./page/etc";
+
+import Eye_kind from "./page/kind/eye_kind";
+import Nose_kind from "./page/kind/nose_kind";
+import Mouth_kind from "./page/kind/mouse_kind";
+import Ear_kind from "./page/kind/ear_kind";
+import Head_kind from "./page/kind/head_kind";
+import Body_kind from "./page/kind/body_kind";
+import Hand_kind from "./page/kind/hand_kind";
+
+
+
+
+
+
+
 function App() {
 
   return (
@@ -48,9 +66,25 @@ function App() {
     <Route path="/map" element={<Map/>} />
 
     <Route path="/pharmacy" element={<Pharmacy/>} />
+    <Route path="/call" element={<Call/>} />
+
+
+    {/* 하.. */}
+    <Route path="/eye_kind" element={<Eye_kind/>}/>
+    <Route path="/nose_kind" element={<Nose_kind/>}/>
+    <Route path="/mouse_kind" element={<Mouth_kind/>}/>
+    <Route path="/ear_kind" element={<Ear_kind/>}/>
+    <Route path="/head_kind" element={<Head_kind/>}/>
+    <Route path="/body_kind" element={<Body_kind/>}/>
+    <Route path="/hand_kind" element={<Hand_kind/>}/>
 
 
 
+
+
+
+
+  <Route path="/extra" element={<Extra/>}/>
    </Routes>
    
   

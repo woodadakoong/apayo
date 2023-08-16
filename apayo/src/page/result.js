@@ -6,11 +6,12 @@ import Map from "./map"; //Map 컴포넌트 불러오기
 import "../css/result.css";
 import logo from "../img/logo.png";
 import order from "../img/order/order_5.png";
-import jindan from "../img/result/jindan.png"
+
 const Result=() => {
+ 
   const location = useLocation();
   const intensityData = location.state; // Intensity 페이지에서 받은 데이터
- 
+
   const [serverResponse, setServerResponse] = useState(null);
   useEffect(() => {
     // 서버로 데이터 전송
@@ -18,7 +19,7 @@ const Result=() => {
   }, [intensityData]);
 
   const sendDataToServer = async (data) => {
-    console.log("intensity:",data);
+  
     const prompt =`
     부위는 ${data.detail_part}이고 증상은 ${data.kind} ${data.pain}이야. 어느 병원에 가야 해? 
     대답할 수 있는 병원은 치과, 외과, 내과, 정형외과, 산부인과, 비뇨기과, 이비인후과, 안과, 피부과.
@@ -33,7 +34,7 @@ const Result=() => {
       console.error('서버 요청 실패:', error);
     }
 
-   
+   console.log(intensityData);
   };
 
   return (
@@ -61,14 +62,20 @@ const Result=() => {
           <div id="click_box">
           <div className="part_box" id="box_part">
             <p className="text"> {intensityData.detail_part}</p>
+            <img src={`/asset/${intensityData.detail_eng}.png` } />
+           
          
           </div>
           <div className="part_box" id="box_kind">
             <p className="text">{intensityData.kind}</p>
+            <img src={`/asset/${intensityData.pain_eng}.png` } />
+
           
           </div>
           <div className="part_box" id="box_pain">
             <p className="text">{intensityData.pain}</p>
+            <img src={`/asset/${intensityData.kind_eng}.png` } />
+
           
           </div>
           </div>

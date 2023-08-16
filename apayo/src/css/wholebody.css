@@ -14,11 +14,23 @@
   margin:0px;
   padding:0;
 
-  @media (max-width: 380px) {
-    /* 뷰포트 너비가 780px 이하일 때 적용될 스타일 */
-   margin:0;
-   padding:0;
-  }
+ 
 }
 
-  
+#boxbox{
+  position:absolute;
+  top:580px;
+  background-color: white;
+  width:350px;
+  height: 80px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  border-radius: 8px;
+  text-decoration: none; 
+
+}
+
+#extra_text{
+  text-align: center;
+}

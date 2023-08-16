@@ -32,12 +32,14 @@ function Intensity(){
         }
     }, []);
 
-    const handlePainSelection = (painType) => {
+    const handlePainSelection = (painType,kind_eng) => {
         const data = {
             ...dataFromKind,
             pain: painType,
             latitude: userLocation.latitude,
-            longitude: userLocation.longitude
+            longitude: userLocation.longitude,
+            kind_eng:kind_eng,
+            
         };
 
         navigate('/result', { state: data });
@@ -63,37 +65,37 @@ function Intensity(){
 
 
             <div id="line1">
-                <button onClick={() => handlePainSelection("찌르는")} id="pain1_btn" className="btn" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <button onClick={() => handlePainSelection("찌르는","pain1")} id="pain1_btn" className="btn" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <img src={pain1} alt="찌르는 이미지" />
                     <p>찌르는</p>
                     <p>Sharp pain</p>
                     </button>
 
-                <button onClick={() => handlePainSelection("욱신거리는")} id="pain2_btn" className="btn" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <button onClick={() => handlePainSelection("욱신거리는","pain2")} id="pain2_btn" className="btn" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <img src={pain2} />
                     <p>욱신거리는</p>
                     <p>Throbbing</p>
                     </button>
-                <button onClick={() => handlePainSelection("묵직한")} id="pain3_btn" className="btn" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <button onClick={() => handlePainSelection("묵직한","pain3")} id="pain3_btn" className="btn" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <img src={pain3}/>
                     <p>묵직한</p>
                     <p>Dull pain</p>
                 </button>
             </div>
             <div id="line2">
-                <button onClick={() => handlePainSelection("화끈거리는")} id="pain4_btn" className="btn" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <button onClick={() => handlePainSelection("화끈거리는","pain4")} id="pain4_btn" className="btn" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <img src={pain4}/>
                     <p>화끈거리는</p>
                     <p>score</p>
                 </button>
 
-                <button onClick={() => handlePainSelection("부어오른")} id="pain5_btn" className="btn" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <button onClick={() => handlePainSelection("부어오른","pain5")} id="pain5_btn" className="btn" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <img src={pain5}/>
                     <p>부어오른</p>
                     <p>Chest</p>
                 </button>
 
-                <button onClick={() => handlePainSelection("간지러움")} id="pain6_btn" className="btn" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <button onClick={() => handlePainSelection("간지러움","pain6")} id="pain6_btn" className="btn" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <img src={pain6}/>
                     <p>간지러움</p>
                     <p>Itchy</p>

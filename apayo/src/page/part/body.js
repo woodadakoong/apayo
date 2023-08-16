@@ -22,90 +22,90 @@ function Body(){
     //가슴
     const Chest = () => {
       
-      const detail_part = { detail_part: "가슴" };
+      const detail_part = { detail_part: "가슴",detail_eng:"chest" };
   
       
-      navigate('/kind', { state: detail_part });
+      navigate('/body_kind', { state: detail_part });
     };
 
     //등
     const Back = () => {
         
-      const detail_part = { detail_part: "등" };
+      const detail_part = { detail_part: "등",detail_eng:"back" };
   
-      navigate('/kind', { state: detail_part });
+      navigate('/body_kind', { state: detail_part });
       };
 
     //윗배
     const Stomach_top = () => {
-      const detail_part = { detail_part: "윗배" };
+      const detail_part = { detail_part: "윗배",detail_eng:"up_bae" };
   
      
-      navigate('/kind', { state: detail_part });
+      navigate('/body_kind', { state: detail_part });
       };
 
       //아랫배
       const Stomach_bottom = () => {
        
-        const detail_part = { detail_part: "아랫배" };
+        const detail_part = { detail_part: "아랫배",detail_eng:"low_bae" };
   
      
-      navigate('/kind', { state: detail_part });
+      navigate('/body_kind', { state: detail_part });
       };
 
 
       //간
       const Liver= () => {
         
-        const detail_part = { detail_part: "간" };
+        const detail_part = { detail_part: "간",detail_eng:"liver" };
   
      
-        navigate('/kind', { state: detail_part });
+        navigate('/body_kind', { state: detail_part });
       };
 
       //심장
       const  Heart= () => {
         
-        const detail_part = { detail_part: "심장" };
+        const detail_part = { detail_part: "심장",detail_eng:"heart" };
   
      
-        navigate('/kind', { state: detail_part });
+        navigate('/body_kind', { state: detail_part });
       };
 
       //폐
       const  Lung= () => {
         
-        const detail_part = { detail_part: "폐" };
+        const detail_part = { detail_part: "폐" ,detail_eng:"pae"};
   
      
-        navigate('/kind', { state: detail_part });
+        navigate('/body_kind', { state: detail_part });
       };
 
       //위
       const  Etc1= () => {
         
-        const detail_part = { detail_part: "위" };
+        const detail_part = { detail_part: "위",detail_eng:"stomach" };
   
      
-        navigate('/kind', { state: detail_part });
+        navigate('/body_kind', { state: detail_part });
       };
 
       //장
       const  Etc2= () => {
         
-        const detail_part = { detail_part: "장" };
+        const detail_part = { detail_part: "장",detail_eng:"jang" };
   
      
-        navigate('/kind', { state: detail_part });
+        navigate('/body_kind', { state: detail_part });
       };
 
       //방광
       const  Etc3= () => {
         
-        const detail_part = { detail_part: "방광" };
+        const detail_part = { detail_part: "방광",detail_eng:"bang" };
   
      
-        navigate('/kind', { state: detail_part });
+        navigate('/body_kind', { state: detail_part });
       };
 
 

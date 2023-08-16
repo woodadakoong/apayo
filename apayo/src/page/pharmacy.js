@@ -1,10 +1,14 @@
 //지도 보여주는 화면
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import {useEffect,useState} from "react";
-import axios from 'axios';
-//import "../css/map.css";
+import './pharmacy.css';
+import { useEffect, useState, useRef } from "react";
+import { BottomSheet } from "react-spring-bottom-sheet";
+import "react-spring-bottom-sheet/dist/style.css";
+
+
 const kakao=window;
+
 const Pharmacy=() => {
   const [currentAddress, setCurrentAddress] = useState('');
   const [keywordData, setData] = useState([]); // data 변수를 상태로 관리
@@ -18,7 +22,7 @@ const Pharmacy=() => {
     const mapOption = {
       //초기위치 설정
       center: new window.kakao.maps.LatLng(33.450701, 126.570667),
-      level: 3,
+      level: 5,
     };
    
     //지도 생성 및 객체 리턴
@@ -63,7 +67,6 @@ const Pharmacy=() => {
       
      
     }
-   
     //키워드로 장소찾기
     function searchPlaces(keyword,map){
       console.log("합쳐진 키워드",keyword);
@@ -83,12 +86,7 @@ const Pharmacy=() => {
             // map.setBounds(bounds);
         } 
         }); 
-
-       
     }
-
-    
-
     
 
     function displayMarker(place, map) {
@@ -104,23 +102,214 @@ const Pharmacy=() => {
       });
   }
   }, [currentAddress]);
+  
+  
+  console.log(keywordData);
 
 
-console.log(keywordData);
+  
 
-  return (
-<div className="main">
- 
-<div id="map" style={{ width: "100px", height: '300px'}}></div>
+  // bottom sheet 
+
+  const [open, setOpen] = useState(false);
+  const bottomSheetRef = useRef();
+
+  useEffect(() => {
+    setOpen(false);
+  }, []);
+
+  function openBottomsheet() {
+    setOpen(true);
+  }
+
+  function onDismiss() {
+    setOpen(false);
+  }
+
+  const [buttonColors, setButtonColors] = useState({
+    runny_nose: '',
+    cold: '',
+    headache: '',
+    covid_19: '',
+    cough:'',
+    wound:'',
+    allergy:'',
+    bruise:'',
+    burn:'',
+    indigestion:'',
+    bowel_movement:'',
+    eye_drops:'',
+    toothache:'',
+    muscle_pain:'',
+    insect:''
+  });
+
+    // Updated button color change function
+    const Blue_change = (buttonId) => {
+      setButtonColors((prevColors) => {
+        const newColors = { ...prevColors };
+        if (newColors[buttonId] === '') {
+          newColors[buttonId] = 'blue'; // Set button color to blue
+        } else {
+          newColors[buttonId] = ''; // Reset button color
+        }
+        return newColors;
+      });
+    };
+
+
+
+
+return (
+  <>
+  <div className="main">
+  <img className='img_Apayo_logo' src="/img/APAYO (1).png"></img>
+  <div id="map-container">
+    <div id="map" style={
+      { display: 'flex', 
+      justifyContent: 'center', 
+      alignItems: 'center',
+       flexDirection: 'column',
+        padding: '1vh',
+         height: '90vh',
+          width: '42vh', 
+          position: 'relative', 
+          zIndex: '0' }}></div>
+  </div>
+  <a onClick={openBottomsheet} className="image-container">
+    <img className="img1" alt="Union" src="/img/Group 173.png" />
+    <img className="img2" alt="Union" src="/img/Group 173.png" />
+    <img className="img3" alt="Union" src="/img/Group 173.png" />
+    <img className="img4" alt="Union" src="/img/Group 173.png" />
+  </a>
 </div>
 
-    
- 
+
 
     
-    
-
-  )
+    <div className="Appp">
+      <BottomSheet
+      open={open}
+      onDismiss={onDismiss}
+      ref={bottomSheetRef}
+      defaultSnap={({ maxHeight }) => maxHeight / 2}
+      snapPoints={({ minHeight, maxHeight }) => [
+        minHeight + minHeight * 0.1,
+        maxHeight - maxHeight / 10,
+        maxHeight / 4,
+        maxHeight * 0.6
+      ]}>
+        <div>
+        <button
+            onClick={() => Blue_change('runny_nose')}
+            className={`pharmacy_btn ${buttonColors['runny_nose']}`}
+          >
+            <img src="/img/runny_nose.png" alt="Button Icon" />
+            <p>콧물</p><p>runny_nose</p>
+          </button>
+          <button
+            onClick={() => Blue_change('cold')}
+            className={`pharmacy_btn ${buttonColors['cold']}`}
+          >
+            <img src="/img/cold.png" alt="Button Icon" />
+            <p>감기</p><p>cold</p>
+          </button>
+          <button
+            onClick={() => Blue_change('headache')}
+            className={`pharmacy_btn ${buttonColors['headache']}`}
+          >
+            <img src="/img/headache.png" alt="Button Icon" />
+            <p>두통</p><p>headache</p>
+          </button>
+          <button
+            onClick={() => Blue_change('covid_19')}
+            className={`pharmacy_btn ${buttonColors['covid_19']}`}
+          >
+            <img src="/img/covid_19.png" alt="Button Icon" />
+            <p>코로나19</p><p>covid_19</p>
+          </button>
+        <button
+            onClick={() => Blue_change('cough')}
+            className={`pharmacy_btn ${buttonColors['cough']}`}
+          >
+            <img src="/img/cough.png" alt="Button Icon" />
+            <p>기침</p><p>cough</p>
+          </button>
+        <button
+            onClick={() => Blue_change('wound')}
+            className={`pharmacy_btn ${buttonColors['wound']}`}
+          >
+            <img src="/img/wound.png" alt="Button Icon" />
+            <p>상처</p><p>wound</p>
+          </button>
+        <button
+            onClick={() => Blue_change('allergy')}
+            className={`pharmacy_btn ${buttonColors['allergy']}`}
+          >
+            <img src="/img/allergy.png" alt="Button Icon" />
+            <p>알레르기</p><p>allergy</p>
+          </button>
+        <button
+            onClick={() => Blue_change('bruise')}
+            className={`pharmacy_btn ${buttonColors['bruise']}`}
+          >
+            <img src="/img/bruise.png" alt="Button Icon" />
+            <p>타박상</p><p>bruise</p>
+          </button>
+        <button
+            onClick={() => Blue_change('burn')}
+            className={`pharmacy_btn ${buttonColors['burn']}`}
+          >
+            <img src="/img/burn.png" alt="Button Icon" />
+            <p>화상</p><p>burn</p>
+          </button>
+        <button
+            onClick={() => Blue_change('indigestion')}
+            className={`pharmacy_btn ${buttonColors['indigestion']}`}
+          >
+            <img src="/img/indigestion.png" alt="Button Icon" />
+            <p>소화</p><p>indigestion</p>
+          </button>
+        <button
+            onClick={() => Blue_change('bowel_movement')}
+            className={`pharmacy_btn ${buttonColors['bowel_movement']}`}
+          >
+            <img src="/img/bowel_movement.png" alt="Button Icon" />
+            <p>배변</p><p>bwel_movement</p>
+          </button>
+        <button
+            onClick={() => Blue_change('eye_drops')}
+            className={`pharmacy_btn ${buttonColors['eye_drops']}`}
+          >
+            <img src="/img/eye_drops.png" alt="Button Icon" />
+            <p>안약</p><p>eye_drops</p>
+          </button>
+        <button
+            onClick={() => Blue_change('toothache')}
+            className={`pharmacy_btn ${buttonColors['toothache']}`}
+          >
+            <img src="/img/toothache.png" alt="Button Icon" />
+            <p>치통</p><p>toothache</p>
+          </button>
+        <button
+            onClick={() => Blue_change('muscle_pain')}
+            className={`pharmacy_btn ${buttonColors['muscle_pain']}`}
+          >
+            <img src="/img/muscle_pain.png" alt="Button Icon" />
+            <p>근육통</p><p>muscle_pain</p>
+          </button>
+        <button
+            onClick={() => Blue_change('insect')}
+            className={`pharmacy_btn ${buttonColors['insect']}`}
+          >
+            <img src="/img/insect.png" alt="Button Icon" />
+            <p>벌레</p><p>insect</p>
+          </button>
+        </div>
+    </BottomSheet>
+    </div>
+  </>
+);
 };
 
 export default Pharmacy;

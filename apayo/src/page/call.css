@@ -1,0 +1,124 @@
+.emergency {
+    background-color: #ebebeb;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .emergency .div {
+    background-color: #ebebeb;
+    border: 1px none;
+    height: auto;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .emergency .text-wrapper {
+    color: #f40000;
+    font-family: RixInooAriDuri;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 10px 0;
+  }
+  
+  .emergency .overlap {
+    background-color: #ffffff;
+    border: 2px solid;
+    border-color: #ff7878;
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px #00000029;
+    margin-top: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .emergency .emergency-call {
+    color: #ff0000;
+    font-family: "Pretendard-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .emergency .image {
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+  }
+  
+  .emergency .overlap-group {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .emergency .text-wrapper-2 {
+    color: #ff0000;
+    font-family: "Pretendard-Bold", Helvetica;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 20;
+    text-align: center;
+  }
+  
+  .emergency .group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+  }
+
+  .emergency .overlap-group-2 {
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+  }
+  
+  .emergency .vector {
+    max-width: 100%; /* Allow the image to scale down */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 20%; /* Move the image to the right */
+  }
+  
+  .emergency .union,
+  .emergency .img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .emergency .union-wrapper {
+    background-color: #ff7878;
+    border-radius: 8px;
+    height: 40px;
+    width: 40px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Media Query for Mobile Devices */
+  @media (max-width: 768px) {
+    .emergency{
+      height: 100vh; /* Set the height to 100% of the viewport height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }; 
+    .div.emergency .overlap,
+    .emergency .overlap-group-2 {
+      width: calc(100% - 40px);
+      margin: 10px auto;
+    }
+  }
+  

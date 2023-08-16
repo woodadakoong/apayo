@@ -42,6 +42,8 @@
   justify-content: center;
   border:2px solid #78a2b9;
   border-radius: 8px;
+  text-align: center;
+
 }
 
 
@@ -59,11 +61,13 @@
   height: 85%;
   display: flex;
   justify-content: center;
+  text-align: center;
   align-items: center;
   background-color: white;
   border:2px solid #78a2b9;
   border-radius: 8px;
   margin-right: 3%;
+  text-decoration: none;
 
 }
 
@@ -79,6 +83,9 @@
  
   border:2px solid #78a2b9;
   border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+
 
 }
 

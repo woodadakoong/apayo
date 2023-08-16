@@ -35,7 +35,7 @@ function Landing(){
         
         </Link>
 
-        <Link to="/call.js" id="call_box">
+        <Link to="/call" id="call_box">
             <div className="wrapper">
            
                

@@ -3,6 +3,7 @@ import {useNavigate} from 'react-router-dom';
 import logo from "../img/logo.png";
 import order from "../img/order/order_1.png";
 import "../css/wholebody.css";
+import { Link } from "react-router-dom";
 import head_img from "../img/body/head.png";
 import left_img from "../img/body/left_hand.png";
 import right_img from "../img/body/right_hand.png";
@@ -81,6 +82,12 @@ function WholeBody(){
               </button>
            </div>
            
+           <Link to="/extra" id="boxbox">
+               <p id="extra_text">그 외의 증상</p>
+                
+            </Link>
+          
+         
           
 
        </div>

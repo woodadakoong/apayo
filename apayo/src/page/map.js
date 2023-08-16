@@ -3,12 +3,14 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import {useEffect,useState} from "react";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // useNavigate 추가
 //import "../css/map.css";
 const kakao=window;
 const Map=({keyword}) => {
+  var customOverlay;
+  const [previousCustomOverlay, setPreviousCustomOverlay] = useState(null); 
   const [currentAddress, setCurrentAddress] = useState('');
   const [keywordData, setData] = useState([]); // data 변수를 상태로 관리
-  const [overlay, setOverlay] = useState(null); // Overlay 상태 추가
   useEffect(() => {
   
     const ps = new window.kakao.maps.services.Places();
@@ -41,17 +43,23 @@ const Map=({keyword}) => {
           position: currentPosition,
         });
         
-        const content = '<div style="display: flex; justify-content: center; align-items: center; padding: 5px; font-size: 12px; text-align: center;">현위치</div>';
+        const content = '<div style="display: flex; justify-content: center; align-items: center; padding: 5px; font-size: 12px; text-align: center;background-color:white; border-radius:8px; ">현위치</div>';
         
+        var positionOverlay = new window.kakao.maps.CustomOverlay({
+          position: currentPosition ,
+          content: content  ,
+          yAnchor: 2.5 // 약간 위쪽에 위치
+      });
         //정보창에 content 보여주기
-        infowindow.setContent(content);
-        infowindow.open(map, marker);
+        // infowindow.setContent(content);
+        // infowindow.open(map, marker);
+        positionOverlay.setMap(map);
 
         //지도 중심좌표를 접속위치로 변경
         map.setCenter(currentPosition);
         const combinedKeyword = currentAddress+" "+ keyword;
+        console.log(combinedKeyword);
         searchPlaces(combinedKeyword, map); // 설정한 키워드로 검색
-        console.log("키워드:",keyword);
 
         //주소정보얻기
         const geocoder = new window.kakao.maps.services.Geocoder();
@@ -68,7 +76,6 @@ const Map=({keyword}) => {
    
     //키워드로 장소찾기
     function searchPlaces(keyword,map){
-      console.log("합쳐진 키워드",keyword);
       ps.keywordSearch(keyword, function(data, status, pagination) {
         if (status === window.kakao.maps.services.Status.OK) {
            setData(data);
@@ -80,6 +87,7 @@ const Map=({keyword}) => {
       
                 
             }       
+           
 
             // 아래 주석을 풀면 내 현위치가 아니라 키워드 검색을 통해 주어진 주소로 지도 중심이 바뀜. ex) 내가 서울에 있는데 부산의 병원이 키워드면 지도가 부산으로 옮겨짐
             // 현재 상태는 키워드 검색을 통해 띄운 마커와 관계없이 현위치를 중심으로 지도 보여줌
@@ -95,8 +103,9 @@ const Map=({keyword}) => {
     
 
     function displayMarker(place, map) {
+     
       const content = `
-    <div class="custom" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <div class="custom" style="background-color: white; padding: 10px; border: 1px solid #ccc; border-radius:8px; display:flex; flex-direction: column; align-items: center;">
       <div style="font-size:12px;">${place.place_name}</div>
       <button onclick="window.location.href='https://place.map.kakao.com/${place.id}';">병원 가기</button>
     </div>`;
@@ -104,19 +113,28 @@ const Map=({keyword}) => {
           map: map,
           position: new window. kakao.maps.LatLng(place.y, place.x) 
       });
-      
+     
       //마커 클릭하면
       window.kakao.maps.event.addListener(marker, 'click', function() {
+        if (customOverlay) {
+          customOverlay.setMap(null);
         
-        infowindow.setContent(content);
-    infowindow.open(map, marker);
+        }
+        customOverlay = new window.kakao.maps.CustomOverlay({
+          position: new window. kakao.maps.LatLng(place.y, place.x) ,
+          content: content   
+      });
+      customOverlay.setMap(map);
+        
+    //     infowindow.setContent(content);
+    // infowindow.open(map, marker);
          
       });
+      marker.setMap(map);
   }
   }, [currentAddress,keyword]);
 
 
-console.log(keywordData);
 
   return (
 
