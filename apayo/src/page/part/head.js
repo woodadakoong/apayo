@@ -66,7 +66,7 @@ function Head(){
         const detail_part = { detail_part: "목",detail_eng:"neck" };
   
      
-        navigate('/kind', { state: detail_part });
+        navigate('/neck_kind', { state: detail_part });
       };
 
 

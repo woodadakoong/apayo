@@ -23,21 +23,21 @@ function Intensity(){
     const navigate=useNavigate();
     const [userLocation, setUserLocation] = useState(null);
 
-    useEffect(()=>{
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                const { latitude, longitude } = position.coords;
-                setUserLocation({ latitude, longitude });
-            });
-        }
-    }, []);
+    // useEffect(()=>{
+    //     if (navigator.geolocation) {
+    //         navigator.geolocation.getCurrentPosition(function (position) {
+    //             const { latitude, longitude } = position.coords;
+    //             setUserLocation({ latitude, longitude });
+    //         });
+    //     }
+    // }, []);
 
     const handlePainSelection = (painType,kind_eng) => {
         const data = {
             ...dataFromKind,
             pain: painType,
-            latitude: userLocation.latitude,
-            longitude: userLocation.longitude,
+            // latitude: userLocation.latitude,
+            // longitude: userLocation.longitude,
             kind_eng:kind_eng,
             
         };

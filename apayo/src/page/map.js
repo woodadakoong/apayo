@@ -5,8 +5,11 @@ import {useEffect,useState} from "react";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // useNavigate 추가
 //import "../css/map.css";
+
 const kakao=window;
+
 const Map=({keyword}) => {
+  const navigate = useNavigate();
   var customOverlay;
   const [previousCustomOverlay, setPreviousCustomOverlay] = useState(null); 
   const [currentAddress, setCurrentAddress] = useState('');
@@ -26,7 +29,7 @@ const Map=({keyword}) => {
    
     //지도 생성 및 객체 리턴
     const map = new window.kakao.maps.Map(mapContainer, mapOption);
-
+    
     // 위치 권한 허용
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function (position) {
@@ -57,8 +60,9 @@ const Map=({keyword}) => {
 
         //지도 중심좌표를 접속위치로 변경
         map.setCenter(currentPosition);
+        console.log("키워드:",keyword);
         const combinedKeyword = currentAddress+" "+ keyword;
-        console.log(combinedKeyword);
+       
         searchPlaces(combinedKeyword, map); // 설정한 키워드로 검색
 
         //주소정보얻기
@@ -72,6 +76,8 @@ const Map=({keyword}) => {
       });
       
      
+    }else{
+      console.log("위치정보를 못받아옴");
     }
    
     //키워드로 장소찾기
@@ -100,15 +106,20 @@ const Map=({keyword}) => {
 
     
 
-    
-
     function displayMarker(place, map) {
-     
+      
+      function goToHospital(placeId) {
+        navigate(`https://place.map.kakao.com/${placeId}`); // useNavigate 사용
+      }
+    
       const content = `
     <div class="custom" style="background-color: white; padding: 10px; border: 1px solid #ccc; border-radius:8px; display:flex; flex-direction: column; align-items: center;">
       <div style="font-size:12px;">${place.place_name}</div>
-      <button onclick="window.location.href='https://place.map.kakao.com/${place.id}';">병원 가기</button>
+      <button onclick="window.location.href='https://place.map.kakao.com/${place.id}';" style="background-color: white; border: none;">
+      <img src="/asset/go_btn.png">
+      </button>
     </div>`;
+    
       var marker = new window.kakao.maps.Marker({
           map: map,
           position: new window. kakao.maps.LatLng(place.y, place.x) 
@@ -132,6 +143,7 @@ const Map=({keyword}) => {
       });
       marker.setMap(map);
   }
+
   }, [currentAddress,keyword]);
 
 

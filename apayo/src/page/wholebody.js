@@ -83,7 +83,8 @@ function WholeBody(){
            </div>
            
            <Link to="/extra" id="boxbox">
-               <p id="extra_text">그 외의 증상</p>
+            <img src="/asset/eet.png"/>
+              그 외의 증상
                 
             </Link>
           

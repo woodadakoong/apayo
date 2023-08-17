@@ -12,7 +12,7 @@ function Kind(){
 
     const hurt1 = () => {
       // 데이터를 객체로 만들기
-      const kind = { ...dataFromPart,kind: "외상" };
+      const kind = { ...dataFromPart,kind: "외상",pain_eng:"pain_out_mini" };
   
       // intensity 페이지로 이동하면서 데이터를 전달
       navigate('/intensity', { state: kind });
@@ -21,14 +21,14 @@ function Kind(){
     //내상
     const hurt2 = () => {
         
-        const kind = { ...dataFromPart,kind: "내상" };
+        const kind = { ...dataFromPart,kind: "내상",pain_eng:"pain_in_mini" };
     
         navigate('/intensity', { state: kind });
       };
 
     //fracture
       const hurt3 = () => {
-        const kind = { ...dataFromPart,kind: "뼈" };
+        const kind = { ...dataFromPart,kind: "뼈",pain_eng:"pain_gol_mini"  };
 
         navigate('/intensity', { state: kind });
       };
@@ -36,7 +36,7 @@ function Kind(){
       //복합
       const hurt4 = () => {
        
-        const kind = { ...dataFromPart,kind: "복합" };
+        const kind = { ...dataFromPart,kind: "복합",pain_eng:"pain_com_mini" };
     
         navigate('/intensity', { state: kind });
       };

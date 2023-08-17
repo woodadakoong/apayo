@@ -6,7 +6,7 @@ import Map from "./map"; //Map 컴포넌트 불러오기
 import "../css/result.css";
 import logo from "../img/logo.png";
 import order from "../img/order/order_5.png";
-
+import { Link} from "react-router-dom";
 const Result=() => {
  
   const location = useLocation();
@@ -22,9 +22,10 @@ const Result=() => {
   
     const prompt =`
     부위는 ${data.detail_part}이고 증상은 ${data.kind} ${data.pain}이야. 어느 병원에 가야 해? 
-    대답할 수 있는 병원은 치과, 외과, 내과, 정형외과, 산부인과, 비뇨기과, 이비인후과, 안과, 피부과.
+    대답할 수 있는 병원종류는 치과, 외과, 내과, 정형외과, 산부인과, 비뇨기과, 이비인후과, 안과, 피부과.
     대답의 형식은, '병원 종류' 만 정확히 단답형으로 말해줘.`;
 ;
+
     const url = `http://localhost:8080/bot/chat?prompt=${encodeURIComponent(prompt)}`;
     try {
       const response = await axios.get(url);
@@ -34,7 +35,7 @@ const Result=() => {
       console.error('서버 요청 실패:', error);
     }
 
-   console.log(intensityData);
+  
   };
 
   return (
@@ -43,9 +44,12 @@ const Result=() => {
     {serverResponse ? (
       <div id="tmp" style={{ width: "100%", height: '100%' }}> 
       <div id="part_navbar">
-          <div id="head_logo">
+        <Link to="/">
+        <div id="head_logo">
           <img src={logo} id="head_logo_img" />
           </div>
+        </Link>
+         
           
           <div id="head_order">
           <img src={order} id="kind_order_img"/>
@@ -89,7 +93,7 @@ const Result=() => {
 
       </div>
     ) : (
-      <p>증상 기반으로 주변 병원을(를) 찾고 있습니다. 
+      <p>증상 기반으로 주변 병원을(를) 찾고 있습니다.
         Based on symptoms, we are looking for a nearby hospital.</p>
     )}
   </div> 

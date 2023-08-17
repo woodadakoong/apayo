@@ -9,6 +9,14 @@
   position: absolute;
   top:140px;
 }
+#part2{
+  position: absolute;
+  top:210px;
+}
+#part3{
+  position: absolute;
+  top:373px;
+}
 
 #left_arm,#right_arm{
   margin:0px;
@@ -22,7 +30,7 @@
   top:580px;
   background-color: white;
   width:350px;
-  height: 80px;
+
   display: flex;
   text-align: center;
   justify-content: center;

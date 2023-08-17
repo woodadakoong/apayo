@@ -28,6 +28,10 @@ import Ear_kind from "./page/kind/ear_kind";
 import Head_kind from "./page/kind/head_kind";
 import Body_kind from "./page/kind/body_kind";
 import Hand_kind from "./page/kind/hand_kind";
+import Neck_kind from "./page/kind/neck_kind";
+import Etc_kind from "./page/kind/etc_kind";
+
+
 
 
 
@@ -77,6 +81,10 @@ function App() {
     <Route path="/head_kind" element={<Head_kind/>}/>
     <Route path="/body_kind" element={<Body_kind/>}/>
     <Route path="/hand_kind" element={<Hand_kind/>}/>
+    <Route path="/neck_kind" element={<Neck_kind/>}/>
+    <Route path="/etc_kind" element={<Etc_kind/>}/>
+
+
 
 
 

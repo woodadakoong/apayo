@@ -25,7 +25,7 @@ function Extra(){
       const detail_part = { detail_part: "감기",detail_eng:"cold" };
   
       // intensity 페이지로 이동하면서 데이터를 전달
-      navigate('/kind', { state: detail_part });
+      navigate('/etc_kind', { state: detail_part });
     };
 
     //내상
@@ -33,7 +33,7 @@ function Extra(){
         
       const detail_part = { detail_part: "기침",detail_eng:"fever" };
   
-      navigate('/kind', { state: detail_part });
+      navigate('/etc_kind', { state: detail_part });
       };
 
     
@@ -41,7 +41,7 @@ function Extra(){
       const detail_part = { detail_part: "코로나",detail_eng:"covid" };
   
      
-      navigate('/kind', { state: detail_part });
+      navigate('/etc_kind', { state: detail_part });
       };
 
       
@@ -50,7 +50,7 @@ function Extra(){
         const detail_part = { detail_part: "정신이상",detail_eng:"mental" };
   
      
-      navigate('/kind', { state: detail_part });
+      navigate('/etc_kind', { state: detail_part });
       };
 
       const Head_detail= () => {
@@ -58,7 +58,7 @@ function Extra(){
         const detail_part = { detail_part: "알레르기",detail_eng:"allergy" };
   
      
-        navigate('/kind', { state: detail_part });
+        navigate('/etc_kind', { state: detail_part });
       };
 
 
@@ -67,7 +67,7 @@ function Extra(){
         const detail_part = { detail_part: "전신통증",detail_eng:"junsin" };
   
      
-        navigate('/kind', { state: detail_part });
+        navigate('/etc_kind', { state: detail_part });
       };
 
 

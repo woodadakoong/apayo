@@ -12,7 +12,7 @@ function Kind(){
 
     const hurt1 = () => {
       // 데이터를 객체로 만들기
-      const kind = { ...dataFromPart,kind: "외상" ,pain_eng:"pain_out_mini"};
+      const kind = { ...dataFromPart,kind: "외상",pain_eng:"pain_out_mini" };
   
       // intensity 페이지로 이동하면서 데이터를 전달
       navigate('/intensity', { state: kind });
@@ -36,7 +36,7 @@ function Kind(){
       //복합
       const hurt4 = () => {
        
-        const kind = { ...dataFromPart,kind: "복합",pain_eng:"pain_com_mini"  };
+        const kind = { ...dataFromPart,kind: "복합",pain_eng:"pain_com_mini" };
     
         navigate('/intensity', { state: kind });
       };
@@ -54,12 +54,12 @@ function Kind(){
           </div>
           <div id="kind_line_1">
             <button onClick={hurt1} className="kind_btn" id="hurt1_btn">
-            <img src="/asset/nose_ex.png"/>
+            <img src="/asset/hand_ex.png"/>
             <p>외상</p>
             <p>External injury</p>
             </button>
             <button onClick={hurt2} className="kind_btn" id="hurt2_btn">
-            <img src="/asset/nose_in.png"/>
+            <img src="/asset/hand_in.png"/>
             <p>내상</p>
             <p>Internal injury</p>
             </button>
