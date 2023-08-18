@@ -44,6 +44,11 @@ const Map=({keyword}) => {
         const marker = new window.kakao.maps.Marker({
         map: map,
           position: currentPosition,
+          image: new window.kakao.maps.MarkerImage(
+            "/asset/markerStar.png",
+            new window.kakao.maps.Size(24, 35),
+            { offset: new window.kakao.maps.Point(12, 35) }
+        ),
         });
         
         const content = '<div style="display: flex; justify-content: center; align-items: center; padding: 5px; font-size: 12px; text-align: center;background-color:white; border-radius:8px; ">현위치</div>';
@@ -60,7 +65,8 @@ const Map=({keyword}) => {
 
         //지도 중심좌표를 접속위치로 변경
         map.setCenter(currentPosition);
-        console.log("키워드:",keyword);
+       
+        console.log("현재위치:",currentAddress);
         const combinedKeyword = currentAddress+" "+ keyword;
        
         searchPlaces(combinedKeyword, map); // 설정한 키워드로 검색

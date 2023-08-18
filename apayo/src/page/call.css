@@ -17,9 +17,10 @@
   .emergency .text-wrapper {
     color: #f40000;
     font-family: RixInooAriDuri;
-    font-size: 18px;
+    font-size: 24px;
+    font-style: normal;
     font-weight: 400;
-    margin: 10px 0;
+    line-height: 32px;
   }
   
   .emergency .overlap {
@@ -59,12 +60,15 @@
   }
   
   .emergency .text-wrapper-2 {
-    color: #ff0000;
-    font-family: "Pretendard-Bold", Helvetica;
-    font-size: 18px;
-    font-weight: 600;
+    color: #F00;
+    font-family: Pretendard;
+    text-align: center;
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 700;
     margin: 10px 20;
     text-align: center;
+    line-height: 32px;
   }
   
   .emergency .group {

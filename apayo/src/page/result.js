@@ -93,7 +93,7 @@ const Result=() => {
 
       </div>
     ) : (
-      <p>증상 기반으로 주변 병원을(를) 찾고 있습니다.
+      <p>증상 기반으로 주변 병원을 찾고 있습니다.
         Based on symptoms, we are looking for a nearby hospital.</p>
     )}
   </div> 

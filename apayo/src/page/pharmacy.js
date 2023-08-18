@@ -172,15 +172,20 @@ return (
        flexDirection: 'column',
         padding: '1vh',
          height: '90vh',
-          width: '42vh', 
+          width: '55vh', 
           position: 'relative', 
           zIndex: '0' }}></div>
   </div>
   <a onClick={openBottomsheet} className="image-container">
-    <img className="img1" alt="Union" src="/img/Group 173.png" />
+    {/* <img className="img1" alt="Union" src="/img/Group 173.png" />
     <img className="img2" alt="Union" src="/img/Group 173.png" />
     <img className="img3" alt="Union" src="/img/Group 173.png" />
-    <img className="img4" alt="Union" src="/img/Group 173.png" />
+    <img className="img4" alt="Union" src="/img/Group 173.png" /> */}
+    {/* 수정된 것 */}
+      <button className='button_openBottomsheet'><img  alt="Union" src="/asset/fever.png" /></button>
+    <button className='button_openBottomsheet'><img src="/asset/bruise.png" alt="Button Icon" /></button>
+    <button className='button_openBottomsheet'><img src="/asset/indigestion.png" alt="Button Icon" /></button>
+    <img className='button_openBottomsheet_plus' src="asset/Group 173.png"></img>
   </a>
 </div>
 

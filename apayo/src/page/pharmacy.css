@@ -47,6 +47,18 @@
     margin-left: 25px;
     margin-top: 20px;
   }
+  /* 추가 */
+  .button_openBottomsheet{
+    border-radius: 8px;
+  border: 2px solid #EFEFEF;
+  background: #FFF;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.16);
+  
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  margin-left:5px;
+  }
   
   
   .blue {
